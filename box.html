@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Handler</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <p>Welcome</p>
+    <div id="box"></div>
+    <input type="text" id="radiusInput" placeholder="Enter border radius">
+    <input type="number" id="borderWidthInput" placeholder="Enter border width">
+    <input type="number" id="widthInput" placeholder="Enter width">
+    <input type="number" id="heightInput" placeholder="Enter height">
+    <input type="color" id="colorInput">
+    <button id="resetButton">Reset</button>
+
+    <script>
+        let box = document.querySelector("#box");
+        let radiusInput = document.querySelector("#radiusInput");
+        let borderWidthInput = document.querySelector("#borderWidthInput");
+        let widthInput = document.querySelector("#widthInput");
+        let heightInput = document.querySelector("#heightInput");
+        let colorInput = document.querySelector("#colorInput");
+        let resetButton = document.querySelector("#resetButton");
+
+        radiusInput.addEventListener("input", () => {
+            box.style.borderRadius = radiusInput.value + "px";
+        });
+
+        borderWidthInput.addEventListener("input", () => {
+            box.style.borderWidth = borderWidthInput.value + "px";
+        });
+
+        widthInput.addEventListener("input", () => {
+    box.style.width = widthInput.value + "px";
+});
+
+
+        heightInput.addEventListener("input", () => {
+            box.style.height = heightInput.value + "px";
+        });
+
+        colorInput.addEventListener("input", () => {
+            box.style.backgroundColor = colorInput.value;
+        });
+
+        resetButton.addEventListener("click", () => {
+            radiusInput.value = "";
+            borderWidthInput.value = "";
+            widthInput.value = "";
+            heightInput.value = "";
+            colorInput.value = "#000000";
+            box.style.borderRadius = "";
+            box.style.borderWidth = "";
+            box.style.width = "";
+            box.style.height = "";
+            box.style.backgroundColor = "";
+        });
+    </script>
+</body>
+</html>
